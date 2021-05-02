@@ -113,7 +113,60 @@ public class Octree
      * @param int sector: sector in which it is located.
      */
     public void nuevoOctree(LinkedList<Bee> abejas,ArrayList<Double> mins,int sector) {
-       
+       if(sector==0){
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+       }else if(sector==1){
+           double newH=mins.get(2)+midH;
+           mins.remove(2);
+           mins.add(2,newH);
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+       }else if(sector==2){
+           double newW=mins.get(1)+midW;
+           mins.remove(1);
+           mins.add(1,newH);
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+       }else if(sector==3){
+           double newH=mins.get(2)+midH;
+           mins.remove(2);
+           mins.add(2,newH);
+           double newW=mins.get(1)+midW;
+           mins.remove(1);
+           mins.add(1,newW);
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+       }else if(sector==4){
+           double newD=mins.get(0)+midD;
+           mins.remove(0);
+           mins.add(0,newD);
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+       }else if(sector==5){
+           double newD=mins.get(0)+midD;
+           mins.remove(0);
+           mins.add(0,newD);
+           double newH=mins.get(2)+midH;
+           mins.remove(2);
+           mins.add(2,newH);
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+       }else if(sector==6){
+           double newD=mins.get(0)+midD;
+           mins.remove(0);
+           mins.add(0,newD);
+           double newW=mins.get(1)+midW;
+           mins.remove(1);
+           mins.add(1,newW);
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+       }else{
+           double newD=mins.get(0)+midD;
+           mins.remove(0);
+           mins.add(0,newD);
+           double newW=mins.get(1)+midW;
+           mins.remove(1);
+           mins.add(1,newW);
+           double newH=mins.get(2)+midH;
+           mins.remove(2);
+           mins.add(2,newH);
+           octree(abejas, mins, midD/2, midW/2, midH/2);
+           
+       }
     }
 
     /**
